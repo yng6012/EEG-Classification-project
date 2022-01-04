@@ -75,8 +75,8 @@ EEG의 계측환경은 EOG 방지를 위해 눈을 감고 실행하였으며 전
 ![data mining 결과](https://user-images.githubusercontent.com/93977356/147996067-906c9174-7eef-4ff2-a41a-8abd10352759.PNG)
 
 * **train_file_path_array**에 입력한 경로 폴더 내부로 들어가면 다음과 같이 **want_round**변수에 따른 폴더가 생성되어있다.
-* **final_data**는 **want_loop_percent** 따라 선별된 데이터이며, **final_round**는 **final_data**를 학습데이터로 하여 검증에 성공한 데이터들이다.
-* 연구 결과는 **final_round** 데이터를 사용하는 것이 더 높은 정확도를 보이는 것을 확인하였다.
+* **final_data**는 **want_loop_percent** 따라 선별된 데이터이며, **final_data**는 **final_round**를 학습데이터로 하여 검증에 성공한 데이터들이다.
+* 연구 결과는 **final_data** 데이터를 사용하는 것이 더 높은 정확도를 보이는 것을 확인하였다.
 
 ## IOUGAN_final
 * Tensorflow 2.1.0
