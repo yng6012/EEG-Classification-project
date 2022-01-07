@@ -47,7 +47,7 @@ EEG의 계측환경은 EOG 방지를 위해 눈을 감고 실행하였으며 전
 - n_frequency : 사용할 STFT 데이터의 주파수축 개수를 입력한다. (준비된 데이터는 79개의 주파수 데이터를 가짐)
 - n_outputs : 분류되는 Class 개수를 나타낸다. (action , normal 로 2개)
 - last_neurons, n_neurons : Stacked LSTM 구조의 각 층마다 Neuron의 개수를 정함. 
-- limit_part : normalization할 단계 수를 나타냄. (normalization 사용안할 경우 무시)
+- ~~limit_part : normalization할 단계 수를 나타냄. (normalization 사용안할 경우 무시)~~
 - important_index : STFT 데이터에서 학습에 중요 시간영역을 따로 표시 [약 3.15~3.75초 사이]
 - normal_range_index : STFT 데이터 전 후방 사용 불가능 데이터 제외한 normal data의 범위
 - window : 학습에 사용할 시간 데이터의 크기. 단 important index의 차이보다 커야 함. ex) 30>(125-105) 의 경우에는 가능하지만, 15<(125-105)이기때문에 15로 설정할 경우 error 발생.
@@ -146,9 +146,8 @@ EEG의 계측환경은 EOG 방지를 위해 눈을 감고 실행하였으며 전
 1. 위에 전처리 프로그램에 의하여 최종적으로 나온 STFT EEG 데이터를 학습과 검증 데이터로 나눠 **data_base_path, test_data_base_path**경로에 넣어둔다.
 2. 위의 공통 변수와 변수설명을 참고하여 변수값을 설정한다.
 3. GAN 데이터를 사용하는 경우, GAN 데이터가 저장된 **action, normal**데이터 경로를 기입하여 [1] 프로그램을 실행한다.
-4. 데이터의 normalization이 필요로 할 경우 [2] 프로그램을 실행한다.
-5. 데이터의 limit part normalization이 필요한 경우 [3]프로그램을 실행한다. 단 [2]를 실행했을 경우 [3]은 실행하지 않는다.
-6. 학습이 종료되고 **Accuracy, Loss, Max Accuracy**를 그래프로 확인하고자 한다면 [4]프로그램을 실행한다.
+4. 데이터의 normalization이 필요로 할 경우 [2] 프로그램을 실행한다. (필수x normalization이 필요하지 않을 경우 해당 프로그램을 실행하지 않는다.)
+5. 학습이 종료되고 **Accuracy, Loss, Max Accuracy**를 그래프로 확인하고자 한다면 [3]프로그램을 실행한다.
 
 ### 프로그램 결과
 
@@ -162,7 +161,7 @@ EEG의 계측환경은 EOG 방지를 위해 눈을 감고 실행하였으며 전
 
 ![학습 결과 그래프](https://user-images.githubusercontent.com/93977356/147996064-fcf5ecb8-c8af-45c7-bcf9-7200f0c094a0.PNG)
 
-* [4]번 프로그램에 따라 나타나는 결과는 다음과 같다.
+* [3]번 프로그램에 따라 나타나는 결과는 다음과 같다.
 
 
 
